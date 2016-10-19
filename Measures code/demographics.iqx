@@ -1,0 +1,97 @@
+﻿***************************************************************************************
+***************************************************************************************
+											SCRIPT OVERVIEW
+***************************************************************************************
+***************************************************************************************
+Script Info
+
+Author: Sean Hughes (sean.hughes@ugent.be)
+last updated: 14-09-16
+***************************************************************************************
+***************************************************************************************
+
+*************************General Variables****************************
+**********************************************************************
+
+<defaults>
+/ screencolor = white
+/ txcolor = black
+/ fontstyle = ("Arial", 3%)
+/ inputdevice = keyboard
+/ validkeys = (" ", "t")
+/ halign = center
+/ Com1BaudRate = 9600
+</defaults>
+
+<expt>
+/ blocks = [1 = block1]
+</expt>
+
+<variables>
+/ group = (1 of 1) (block1 = demographics)
+</variables>
+
+
+***** Demographics******************************
+************************************************
+<textbox age>
+/ caption = "What is your age:"
+</textbox>
+
+<textbox gender>
+/ caption = "What is your gender"
+</textbox>
+
+<textbox ProlificCode>
+/ caption = 
+"Please enter your prolific ID here. 
+If you cannot remember it please quit the experiment now using ctrl-C or cmd-C
+and retrieve it before restarting. Otherwise you cannot be paid."
+/ position = (10%,10%)
+/ textboxsize = (45, 40)
+/ multiline = true
+</textbox>
+
+***********************************************
+
+<surveypage info_1>
+/ questions = [1 = age]
+/ showpagenumbers = false 
+/ showquestionnumbers = false
+</surveypage>
+
+<surveypage info_2>
+/ questions = [1 = gender]
+/ showpagenumbers = false 
+/ showquestionnumbers = false
+</surveypage>
+
+<surveypage info_3>
+/ questions = [1 = ProlificCode]
+/ showpagenumbers = false 
+/ showquestionnumbers = false
+</surveypage>
+
+**********  block  **********
+
+<block demographics>
+/ preinstructions = (WelcomeInstructions)
+/ screencolor = white
+/ trials = [1 = info_1; 2 = info_2; 3 = info_3]
+</block>
+
+**********  Instructions  *************
+
+<instruct>  
+/ fontstyle = ("Arial", 3%)
+/ inputdevice = keyboard
+/ nextkey = (" ")
+/ nextlabel = "Press the spacebar to continue"
+/ prevlabel = "Press the 't' key to go back"
+/ prevkey = ("t")
+</instruct>
+
+<page WelcomeInstructions>
+^^Welcome to the experiment. Before you start, please:
+^^– switch off phone/e-mail/music & anything else distracting.
+</page>

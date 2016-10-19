@@ -1,0 +1,264 @@
+﻿************************************************
+               RELATIONAL TESTING (Combinatorial Entailment of BC Relations)
+************************************************
+Authors: Sean Hughes (sean.hughes@ugent.be) & Ian Hussey (ian.hussey@ugent.be)
+Last updated: 29-09-2016
+
+************* general variables ****************
+
+<defaults>
+/ screencolor = black
+/ txcolor = white
+/ fontstyle = ("Arial", 5.00%)
+/ inputdevice = keyboard
+/ validkeys = (" ", "t")
+/ halign = center
+/ Com1BaudRate = 9600
+</defaults>
+
+<expt>
+/ blocks = [1 = block1]
+</expt>
+
+<variables>
+/ group = (1 of 1) (block1 = Relational_Testing_Phase_BC)
+</variables>
+
+************** stimuli exemplars ***************
+
+<item B1>
+/ 1 = "B1.png"
+</item>
+
+<item B2>
+/ 1 = "B2.png"
+</item>
+
+<item C1>
+/ 1 = "C1.png"
+</item>
+
+<item C2>
+/ 1 = "C2.png"
+</item>
+
+***************** stimuli **********************
+
+<picture B1_target>
+/ numitems = 1
+/ items = B1
+/ position = (50, 30)
+/ size = (25%, 25%)
+</picture>
+
+<picture B1_sample1>
+/ numitems = 1
+/ items = B1
+/ position = (25, 70)
+/ size = (25%, 25%)
+</picture>
+
+<picture B1_sample2>
+/ numitems = 1
+/ items = B1
+/ position = (75, 70)
+/ size = (25%, 25%)
+</picture>
+
+<picture B2_target>
+/ numitems = 1
+/ items = B2
+/ position = (50, 30)
+/ size = (25%, 25%)
+</picture>
+
+<picture B2_sample1>
+/ numitems = 1
+/ items = B2
+/ position = (25, 70)
+/ size = (25%, 25%)
+</picture>
+
+<picture B2_sample2>
+/ numitems = 1
+/ items = B2
+/ position = (75, 70)
+/ size = (25%, 25%)
+</picture>
+
+<picture C1_target>
+/ numitems = 1
+/ items = C1
+/ position = (50, 30)
+/ size = (25%, 25%)
+</picture>
+
+<picture C1_sample1>
+/ numitems = 1
+/ items = C1
+/ position = (25, 70)
+/ size = (25%, 25%)
+</picture>
+
+<picture C1_sample2>
+/ numitems = 1
+/ items = C1
+/ position = (75, 70)
+/ size = (25%, 25%)
+</picture>
+
+<picture C2_target>
+/ numitems = 1
+/ items = C2
+/ position = (50, 30)
+/ size = (25%, 25%)
+</picture>
+
+<picture C2_sample1>
+/ numitems = 1
+/ items = C2
+/ position = (25, 70)
+/ size = (25%, 25%)
+</picture>
+
+<picture C2_sample2>
+/ numitems = 1
+/ items = C2
+/ position = (75, 70)
+/ size = (25%, 25%)
+</picture>
+
+***************** labels etc *******************
+
+<text continue>
+/ numitems = 1
+/ items = ("Press the spacebar to continue")
+/ txcolor = white
+/ txbgcolor = black
+/ position = (50, 95)
+/ fontstyle = ("Arial", 5.00%, true)
+</text>
+
+<text blank>
+/ numitems = 1
+/ items = ("                     ")
+/ txcolor = white
+/ txbgcolor = black
+/ erase = false
+/ fontstyle = ("Arial", 5.00%, true)
+</text>
+
+<text left_key>
+/ numitems = 1
+/ items = ("Press E for")
+/ txcolor = white
+/ txbgcolor = black
+/ position = (25, 90)
+</text>
+
+<text right_key>
+/ numitems = 1
+/ items = ("Press I for")
+/ txcolor = white
+/ txbgcolor = black
+/ position = (75, 90)
+</text>
+
+********* Relational Testing Phase *************
+
+<trial B1_C1_C2> 
+/ inputdevice = keyboard
+/ correctresponse = ("e")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = B1_target; 1000 = C1_sample1, C2_sample2, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+<trial B1_C2_C1> 
+/ inputdevice = keyboard
+/ correctresponse = ("i")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = B1_target; 1000 = C1_sample2, C2_sample1, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+<trial C1_B1_B2> 
+/ inputdevice = keyboard
+/ correctresponse = ("e")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = C1_target; 1000 = B1_sample1, B2_sample2, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+<trial C1_B2_B1> 
+/ inputdevice = keyboard
+/ correctresponse = ("i")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = C1_target; 1000 = B1_sample2, B2_sample1, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+<trial B2_C2_C1> 
+/ inputdevice = keyboard
+/ correctresponse = ("e")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = B2_target; 1000= C2_sample1, C1_sample2, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+<trial B2_C1_C2> 
+/ inputdevice = keyboard
+/ correctresponse = ("i")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = B2_target; 1000 = C2_sample2, C1_sample1, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+<trial C2_B1_B2> 
+/ inputdevice = keyboard
+/ correctresponse = ("i")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = C2_target; 1000 = B1_sample1, B2_sample2, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+<trial C2_B2_B1> 
+/ inputdevice = keyboard
+/ correctresponse = ("e")
+/ validresponse = ("e", "i")
+/ stimulustimes = [500 = C2_target; 1000 = B1_sample2, B2_sample1, left_key, right_key]
+/ pretrialpause = 500
+</trial>
+
+*****************  block  **********************
+
+<block Relational_Testing_Phase_BC>
+/ preinstructions = (RTP_instructions)
+/ trials = [1-16 = noreplacenorepeat(B1_C1_C2, B1_C2_C1, C1_B1_B2, C1_B2_B1, B2_C2_C1, B2_C1_C2, C2_B1_B2, C2_B2_B1)]
+</block>
+
+**************  instructions  ******************
+
+<instruct>
+/ fontstyle = ("Arial", 3.00%)
+/ inputdevice = keyboard
+/ nextkey = (" ")
+/ nextlabel = "Press the spacebar to continue"
+/ prevlabel = "Press the 't' key to go back"
+/ prevkey = ("t")
+/ windowsize = (800px, 600px)
+</instruct>
+
+<page RTP_instructions>
+^^IMPORTANT: In the next task, you will have to use what you learned in the previous tasks to figure out which images go together here.
+^^This task is CRUCIAL to the experiment - please take your time and try to respond as ACCURATELY as possible.
+^^IMPORTANT: We will no longer tell you when you are correct or incorrect. This part of the experiment is designed to test what you have previously learned.
+^^Please place your fingers on the E and I keys.
+</page>
+
+************** Test monkey  ********************
+
+<monkey>
+/ latencydistribution = normal(500, 100)
+/ percentcorrect = 95
+</monkey>
