@@ -1,18 +1,11 @@
-﻿***************************************************************************************
-***************************************************************************************
-											SCRIPT OVERVIEW
-***************************************************************************************
-***************************************************************************************
-Script Info
+﻿************************************************
+Demographics
+************************************************
 
-Author: Sean Hughes (sean.hughes@ugent.be)
-last updated: 14-09-16
-***************************************************************************************
-***************************************************************************************
+Ian Hussey (ian.hussey@ugent.be)
+GPLv3+ license
 
-*************************General Variables****************************
-**********************************************************************
-
+************************************************
 <defaults>
 / screencolor = white
 / txcolor = black
@@ -32,7 +25,8 @@ last updated: 14-09-16
 </variables>
 
 
-***** Demographics******************************
+************************************************
+Demographics
 ************************************************
 <textbox age>
 / caption = "What is your age:"
@@ -45,7 +39,7 @@ last updated: 14-09-16
 <textbox ProlificCode>
 / caption = 
 "Please enter your prolific ID here. 
-If you cannot remember it please quit the experiment now using ctrl-C or cmd-C
+If you cannot remember it please quit the experiment now using ctrl-q
 and retrieve it before restarting. Otherwise you cannot be paid."
 / position = (10%,10%)
 / textboxsize = (45, 40)
@@ -72,7 +66,9 @@ and retrieve it before restarting. Otherwise you cannot be paid."
 / showquestionnumbers = false
 </surveypage>
 
-**********  block  **********
+************************************************
+block
+************************************************
 
 <block demographics>
 / preinstructions = (WelcomeInstructions)
@@ -80,7 +76,9 @@ and retrieve it before restarting. Otherwise you cannot be paid."
 / trials = [1 = info_1; 2 = info_2; 3 = info_3]
 </block>
 
-**********  Instructions  *************
+************************************************
+Instructions
+************************************************
 
 <instruct>  
 / fontstyle = ("Arial", 3%)
